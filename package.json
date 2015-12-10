@@ -1,5 +1,5 @@
 {
-  "name": "bookapp",
+  "name": "node-express-postgres-api-boilerplate",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {
