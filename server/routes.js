@@ -5,9 +5,14 @@ import path from 'path';
 
 module.exports = function (app) {
   
-  // Insert routes below
+  // Routes
   app.use('/api/things', require('./api/thing'));
+  app.use('/api/books', require('./api/book'));
   app.use('/api/users', require('./api/user'));
+  app.use('/api/genres', require('./api/genre'));
+  app.use('/api/authors', require('./api/author'));
+  app.use('/api/suggestions', require('./api/suggestion'));
+  app.use('/api/requests', require('./api/request'));
 
   app.use('/auth', require('./auth'));
 
