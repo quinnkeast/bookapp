@@ -13,11 +13,6 @@ module.exports = function(sequelize, DataTypes) {
     description: {
       type: DataTypes.TEXT
     },
-    created: {
-      type: DataTypes.DATE,
-      allowNull: false,
-      defaultValue: DataTypes.NOW,
-    },
     language: {
       type: DataTypes.STRING
     }

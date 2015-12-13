@@ -22,14 +22,14 @@ db.Author = db.sequelize.import('../api/author/author.model');
 
 // Suggestions have relations
 db.Suggestion = db.sequelize.import('../api/suggestion/suggestion.model');
-db.Suggestion.hasOne(db.User, {as: 'SuggestorId'});
-db.Suggestion.hasOne(db.User, {as: 'SuggesteeId'});
-db.Suggestion.hasOne(db.Book);
+db.Suggestion.belongsTo(db.User, {as: 'Suggestor'});
+db.Suggestion.belongsTo(db.User, {as: 'Suggestee'});
+db.Suggestion.belongsTo(db.Book);
 
 // Requests have relations
 db.Request = db.sequelize.import('../api/request/request.model');
-db.Request.hasOne(db.User, {as: 'RequestorId'});
-db.Request.hasOne(db.Book); // "Reference" book
+db.Request.belongsTo(db.User, {as: 'Requestor'});
+db.Request.belongsTo(db.Book); // "Reference" book
 
 // Books have many authors and vice versa
 db.BookAuthor = db.sequelize.import('./models/bookAuthor.model');
